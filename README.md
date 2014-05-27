@@ -7,6 +7,9 @@ Requirements:
 
 PyIRC: https://pypi.python.org/pypi/irc
 
+PySerial: http://pyserial.sourceforge.net/
+	https://pypi.python.org/pypi/pyserial
+
 Python 2.7+
 
 Parallax Propeller Board
