@@ -35,7 +35,7 @@ class IRC2LCDbot(irc.bot.SingleServerIRCBot):
 
 	def on_pubmsg(self, c, e):
 		pubmsgTemp = e.arguments[0]	# e.arguments[0] is the public message we are processing, loaded into "pubmsgTemp"
-		pattern = re.compile(r'(.*{0}\s.*|.*{1}:.*)'.format(MonitorNick,MonitorNick))	# Compile Regular Expression to check if the public message has our MonitorNick in it
+		pattern = re.compile(r'(.*{0}([|_][a-z0-9]+)?(\s|$).*|.*{1}([|_][a-z0-9]+)?:.*)'.format(MonitorNick,MonitorNick))	# Compile Regular Expression to check if the public message has our MonitorNick in it
 		result = re.search(pattern, pubmsgTemp)	# Execute Regular Expression
 		if result:	# Check to see if we matched our MonitorNick in the public message
 			try:	# Handle error when result has 'None' in it
